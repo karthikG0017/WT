@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Content</title>
+
+    <script>
+        function loadBook(book) {
+
+            let content = document.getElementById("content");
+
+            if(book === "java") {
+                content.innerHTML = "Java Book - Price: 500";
+            }
+            else if(book === "python") {
+                content.innerHTML = "Python Book - Price: 400";
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+<h2>Select Book</h2>
+
+<button onclick="loadBook('java')">Java</button>
+<button onclick="loadBook('python')">Python</button>
+
+<h3>Book Details:</h3>
+<div id="content"></div>
+
+</body>
+</html>

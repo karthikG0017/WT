@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forgot Password</title>
+
+    <script>
+        function validateEmail() {
+
+            let email = document.getElementById("email").value;
+
+            // Email pattern
+            let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if(!pattern.test(email)) {
+                alert("Invalid Email Format");
+                return false;
+            }
+
+            alert("If email exists, reset link sent");
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+
+<h2>Forgot Password</h2>
+
+<form onsubmit="return validateEmail()">
+
+    Email:
+    <input type="text" id="email"><br><br>
+
+    <input type="submit" value="Reset Password">
+
+</form>
+
+</body>
+</html>

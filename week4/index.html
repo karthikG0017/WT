@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Book Store</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+        }
+
+        .book {
+            background: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px gray;
+        }
+
+        button {
+            padding: 8px 15px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: darkgreen;
+        }
+
+        .view-btn {
+            background: blue;
+            margin-top: 20px;
+        }
+
+        .view-btn:hover {
+            background: darkblue;
+        }
+    </style>
+
+    <script>
+        function addToCart(name, price) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push({name: name, price: price});
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(name + " added to cart");
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Online Book Store</h2>
+
+<div class="book">
+    <h3>Java Book</h3>
+    <p>Price: Rs.500</p>
+    <button onclick="addToCart('Java Book', 500)">Add to Cart</button>
+</div>
+
+<div class="book">
+    <h3>Python Book</h3>
+    <p>Price: Rs.400</p>
+    <button onclick="addToCart('Python Book', 400)">Add to Cart</button>
+</div>
+
+<div class="book">
+    <h3>C++ Book</h3>
+    <p>Price: Rs.600</p>
+    <button onclick="addToCart('C++ Book', 600)">Add to Cart</button>
+</div>
+
+<a href="cart.html">
+    <button class="view-btn">View Cart</button>
+</a>
+
+</div>
+
+</body>
+</html>

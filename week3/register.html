@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+
+    <script>
+        function validateForm() {
+
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let confirm = document.getElementById("confirm").value;
+
+            // Username: min 5 chars
+            let userPattern = /^[a-zA-Z0-9]{5,}$/;
+
+            if(!userPattern.test(username)) {
+                alert("Username must be at least 5 characters (letters/numbers only)");
+                return false;
+            }
+
+            // Password: min 8 chars
+            let passPattern = /^.{8,}$/;
+
+            if(!passPattern.test(password)) {
+                alert("Password must be at least 8 characters");
+                return false;
+            }
+
+            // Confirm password
+            if(password !== confirm) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            alert("Registration Successful");
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+
+<h2>User Registration</h2>
+
+<form onsubmit="return validateForm()">
+
+    Username:
+    <input type="text" id="username"><br><br>
+
+    Password:
+    <input type="password" id="password"><br><br>
+
+    Confirm Password:
+    <input type="password" id="confirm"><br><br>
+
+    <input type="submit" value="Register">
+
+</form>
+
+</body>
+</html>
