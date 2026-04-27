@@ -1,0 +1,44 @@
+SHOW DATABASES;
+
+CREATE DATABASE bookstore;
+
+USE bookstore;
+
+CREATE TABLE books (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(50),
+    author VARCHAR(50),
+    price INT
+);
+
+INSERT INTO books(title, author, price) VALUES
+('Java', 'James', 500),
+('Python', 'Guido', 400);
+INSERT INTO books(title, author, price) VALUES
+('C++', 'KK', 444);
+
+SELECT * from books;
+
+-- 1. Create database
+CREATE DATABASE checkout_db;
+
+-- 2. Use database
+USE checkout_db;
+
+-- 3. Create products table
+CREATE TABLE products (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    price DOUBLE
+);
+
+-- 4. Insert sample data
+INSERT INTO products (name, price) VALUES
+('Java Book', 500),
+('Python Book', 400),
+('C++ Book', 600),
+('Data Structures', 700);
+
+-- 5. Verify
+SELECT * FROM products;
+
