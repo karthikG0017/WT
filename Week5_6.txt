@@ -1,0 +1,64 @@
+books.xml:
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore SYSTEM "books.dtd">
+
+<bookstore>
+
+    <book>
+        <title>Java Programming</title>
+        <author>James Gosling</author>
+        <genre>Programming</genre>
+        <price>500</price>
+        <availability>In Stock</availability>
+    </book>
+
+    <book>
+        <title>Python Basics</title>
+        <author>Guido</author>
+        <genre>Programming</genre>
+        <price>400</price>
+        <availability>In Stock</availability>
+    </book>
+
+</bookstore>
+
+books.dtd:
+<!ELEMENT bookstore (book+)>
+
+<!ELEMENT book (title, author, genre, price, availability)>
+
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT genre (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT availability (#PCDATA)>
+
+users.xml:
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users SYSTEM "users.dtd">
+
+<users>
+
+    <user>
+        <username>karthik</username>
+        <password>1234encrypted</password>
+        <email>karthik@gmail.com</email>
+
+        <purchaseHistory>
+            <book>Java Programming</book>
+        </purchaseHistory>
+    </user>
+
+</users>
+
+users.dtd:
+<!ELEMENT users (user+)>
+
+<!ELEMENT user (username, password, email, purchaseHistory)>
+
+<!ELEMENT username (#PCDATA)>
+<!ELEMENT password (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+
+<!ELEMENT purchaseHistory (book*)>
+<!ELEMENT book (#PCDATA)>
