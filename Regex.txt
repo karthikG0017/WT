@@ -1,0 +1,246 @@
+Good—this is exactly the right thing to focus on before exam 👍
+If you understand **regex basics + common patterns**, you can handle *any* validation question.
+
+I’ll keep it **practical (exam-focused)**, not theory-heavy.
+
+---
+
+# 🧠 1. What is Regex (1 line for exam)
+
+👉 A **pattern used to validate or match text input**
+
+---
+
+# 🔤 2. Basic Building Blocks (MUST KNOW)
+
+### ✔ Character sets
+
+```javascript
+[a-z]      // lowercase letters
+[A-Z]      // uppercase letters
+[0-9]      // digits
+[a-zA-Z]   // letters only
+[a-zA-Z0-9] // letters + numbers
+```
+
+---
+
+### ✔ Special symbols
+
+```javascript
+^   // start of string
+$   // end of string
+.   // any character
+```
+
+---
+
+### ✔ Length controls
+
+```javascript
+{5}     // exactly 5 chars
+{5,}    // at least 5
+{5,10}  // between 5 and 10
+```
+
+---
+
+### ✔ Shortcuts
+
+```javascript
+\d   // digit (same as [0-9])
+\w   // letter + number + _
+\s   // space
+```
+
+---
+
+# 🚀 3. MOST IMPORTANT PATTERNS (Exam Use)
+
+---
+
+# 🔥 1. Username Validation
+
+👉 Only letters + numbers, min 5 chars
+
+```javascript
+let pattern = /^[a-zA-Z0-9]{5,}$/;
+```
+
+---
+
+# 🔥 2. Password (Basic)
+
+👉 At least 8 characters
+
+```javascript
+let pattern = /^.{8,}$/;
+```
+
+---
+
+# 🔥 3. Password (Strong – VERY IMPORTANT)
+
+👉 Must contain:
+
+* 1 uppercase
+* 1 lowercase
+* 1 digit
+* min 8 chars
+
+```javascript
+let pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+```
+
+👉 ⭐ High chance in exam
+
+---
+
+# 🔥 4. Email Validation
+
+```javascript
+let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+```
+
+✔ Covers most exam cases
+
+---
+
+# 🔥 5. Phone Number (10 digits)
+
+```javascript
+let pattern = /^[0-9]{10}$/;
+```
+
+---
+
+# 🔥 6. Only Alphabets
+
+```javascript
+let pattern = /^[a-zA-Z]+$/;
+```
+
+---
+
+# 🔥 7. Only Numbers
+
+```javascript
+let pattern = /^[0-9]+$/;
+```
+
+---
+
+# 🔥 8. Alphanumeric (no special chars)
+
+```javascript
+let pattern = /^[a-zA-Z0-9]+$/;
+```
+
+---
+
+# 🔥 9. Name with spaces allowed
+
+```javascript
+let pattern = /^[a-zA-Z ]+$/;
+```
+
+---
+
+# 🔥 10. Starts with letter
+
+```javascript
+let pattern = /^[a-zA-Z][a-zA-Z0-9]*$/;
+```
+
+---
+
+# 🧠 4. How to Use in JS (IMPORTANT)
+
+```javascript
+if(!pattern.test(input)) {
+    alert("Invalid input");
+}
+```
+
+---
+
+# 🔥 5. Full Example (Exam Ready)
+
+```javascript
+function validate() {
+
+    let user = document.getElementById("user").value;
+
+    let pattern = /^[a-zA-Z0-9]{5,}$/;
+
+    if(!pattern.test(user)) {
+        alert("Invalid username");
+        return false;
+    }
+
+    return true;
+}
+```
+
+---
+
+# ⚠️ 6. Common Mistakes (Avoid)
+
+❌ Forgetting `^` and `$`
+❌ Writing wrong length
+❌ Not using `.test()`
+
+---
+
+# 🎯 7. What Madam Can Ask (Be Ready)
+
+She may ask:
+
+* Username validation
+* Strong password
+* Email format
+* Phone number
+* Only digits / only letters
+* Custom pattern (like starts with A)
+
+---
+
+# 🚀 8. Quick Memory Trick
+
+Remember just these 5 and you’re safe:
+
+```plaintext
+Username → [a-zA-Z0-9]{5,}
+Password → .{8,}
+Strong Password → (?=.*[A-Z])(?=.*[a-z])(?=.*\d)
+Email → something@something.com
+Phone → [0-9]{10}
+```
+
+---
+
+# 🧠 Final Advice
+
+You don’t need “every regex in world”
+
+👉 You need:
+
+* Basics
+* 5–6 common patterns
+* `.test()` usage
+
+That’s enough for full marks
+
+---
+
+# 🚀 Next
+
+Now we continue:
+
+👉 Week-4 (Shopping Cart – final JS part)
+
+---
+
+### Tell me:
+
+👉 Ready for Week-4?
