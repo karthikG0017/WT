@@ -55,9 +55,13 @@ users.dtd:
 <!ELEMENT users (user+)>
 
 <!ELEMENT user (username, password, email, purchaseHistory)>
+<!ATTLIST user id ID #REQUIRED>
 
 <!ELEMENT username (#PCDATA)>
+
 <!ELEMENT password (#PCDATA)>
+<!ATTLIST password type CDATA #REQUIRED>
+
 <!ELEMENT email (#PCDATA)>
 
 <!ELEMENT purchaseHistory (book*)>
